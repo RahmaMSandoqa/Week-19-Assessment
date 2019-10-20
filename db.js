@@ -63,15 +63,30 @@ let updateTask = (id, cb) => {
 };
 
 // Q4:we have 6 errors here please fix them [6 pt]
-let deleteTask = (id, cb) => {
-  tasks.deleteOne({ ID: cb }, (err, result) => {
+// let deleteTask = (id, cb) => {
+//   tasks.deleteOne({ ID: cb }, (err, result) => {
+//     if (result) {
+//       console.log(err);
+//     } else {
+//       getTasks();
+//     }
+//   });
+// };
+
+
+let delete = (cb, Id) => {
+  tasks.deleteOneTask({ ID: cb }, (err, result) => {
     if (result) {
       console.log(err);
     } else {
-      getTasks();
+      getTasks(cb);
     }
   });
 };
+
+
+
+
 
 module.exports = {
   getTasks: getTasks,
